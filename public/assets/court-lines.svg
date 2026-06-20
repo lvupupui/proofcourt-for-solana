@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title">
+  <title id="title">ProofCourt line mark</title>
+  <rect width="240" height="240" fill="#f7f4e9"/>
+  <circle cx="120" cy="120" r="94" fill="none" stroke="#2f6f52" stroke-width="8"/>
+  <circle cx="120" cy="120" r="70" fill="none" stroke="#b7843c" stroke-width="3"/>
+  <path d="M70 88h100M88 88v74M152 88v74M75 162h90" fill="none" stroke="#172019" stroke-width="7" stroke-linecap="round"/>
+  <path d="M120 58l42 30H78l42-30z" fill="none" stroke="#172019" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M96 128h48M100 144h40" stroke="#2f6f52" stroke-width="6" stroke-linecap="round"/>
+  <path d="M62 190h116" stroke="#172019" stroke-width="7" stroke-linecap="round"/>
+</svg>

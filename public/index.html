@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ProofCourt for Solana</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="courtroom">
+        <div class="masthead">
+          <div>
+            <p class="eyebrow">Qwen Cloud AI Agent Hackathon</p>
+            <h1>ProofCourt for Solana</h1>
+            <p class="lede">
+              A multi-agent evidence court that cross-examines Solana projects before founders, investors,
+              grant reviewers, or ecosystem teams spend time on them.
+            </p>
+          </div>
+          <div class="seal" aria-hidden="true">
+            <img src="/assets/court-lines.svg" alt="" />
+          </div>
+        </div>
+
+        <div class="court-grid">
+          <form id="court-form" class="panel intake-panel">
+            <div class="panel-title">
+              <span>Case Intake</span>
+              <small id="engine-status">checking engine</small>
+            </div>
+
+            <label>
+              Project name
+              <input id="project-name" name="projectName" value="HelioVault" maxlength="120" />
+            </label>
+
+            <label>
+              Court mode
+              <select id="mode" name="mode">
+                <option value="investor">Investor memo</option>
+                <option value="grant">Grant review</option>
+                <option value="partner">Partner screen</option>
+                <option value="quick">Quick screen</option>
+              </select>
+            </label>
+
+            <label>
+              Evidence packet
+              <textarea id="material" name="material" rows="13">HelioVault is a fictional Solana-native treasury workflow for small DAOs. The pitch claims multisig approval flows, token account monitoring, and AI-generated spend summaries. The team says 12 DAOs are testing it, but the public page only links to a prototype repo and a short demo. There is no visible audit, no named customers, and no mainnet program ID listed yet. The repo README describes wallet signing, SPL token transfers, and a planned dashboard for grant spend reporting.</textarea>
+            </label>
+
+            <button class="primary-action" type="submit">
+              Run Court Session
+            </button>
+          </form>
+
+          <section class="panel verdict-panel">
+            <div class="panel-title">
+              <span>Judge's Verdict</span>
+              <small id="generated-at">not generated</small>
+            </div>
+            <div id="verdict-card" class="verdict-card muted">
+              <span class="verdict-label">Awaiting case</span>
+              <p>Submit a project packet to convene the court.</p>
+            </div>
+            <div class="memo-strip">
+              <div>
+                <span>Why now</span>
+                <p id="memo-why">-</p>
+              </div>
+              <div>
+                <span>Killer question</span>
+                <p id="memo-killer">-</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="agent-row">
+          <article class="agent-card prosecutor">
+            <span class="role">Prosecutor Agent</span>
+            <h2 id="prosecutor-thesis">Find the weak claims</h2>
+            <ul id="prosecutor-list"></ul>
+          </article>
+          <article class="agent-card defense">
+            <span class="role">Defense Agent</span>
+            <h2 id="defense-thesis">Find the strongest case</h2>
+            <ul id="defense-list"></ul>
+          </article>
+          <article class="agent-card judge">
+            <span class="role">Judge Agent</span>
+            <h2>Ruling and next actions</h2>
+            <p id="judge-ruling">The court has not convened yet.</p>
+            <ul id="judge-list"></ul>
+          </article>
+        </section>
+
+        <section class="board-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Evidence Board</p>
+              <h2>Claims are not accepted until labeled.</h2>
+            </div>
+            <p id="case-theory">Every project claim becomes observed, inferred, unverified, contradicted, or not found.</p>
+          </div>
+          <div id="evidence-board" class="evidence-board"></div>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel">
+            <div class="panel-title">
+              <span>Contradiction Radar</span>
+            </div>
+            <div id="contradictions" class="stack-list"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-title">
+              <span>Risk Register</span>
+            </div>
+            <div id="risk-register" class="risk-register"></div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
