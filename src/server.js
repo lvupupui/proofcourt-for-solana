@@ -1,12 +1,34 @@
 import express from "express";
+import { existsSync, readFileSync } from "node:fs";
 import { z } from "zod";
 import { fallbackCourtResult } from "./sample-result.js";
+
+loadLocalEnv();
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
 
 app.use(express.json({ limit: "1mb" }));
 app.use(express.static("public"));
+
+function loadLocalEnv() {
+  const envPath = ".env";
+  if (!existsSync(envPath)) return;
+
+  for (const line of readFileSync(envPath, "utf8").split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+
+    const separatorIndex = trimmed.indexOf("=");
+    if (separatorIndex === -1) continue;
+
+    const key = trimmed.slice(0, separatorIndex).trim();
+    const value = trimmed.slice(separatorIndex + 1).trim();
+    if (key && !process.env[key]) {
+      process.env[key] = value;
+    }
+  }
+}
 
 const requestSchema = z.object({
   projectName: z.string().trim().min(1).max(120),

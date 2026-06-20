@@ -33,9 +33,11 @@ The project includes a local fallback engine so judges can inspect the product f
 
 Qwen Cloud powers the multi-role reasoning step. The model receives the project evidence packet and returns structured JSON for the Prosecutor, Defense, Judge, Evidence Board, Contradiction Radar, Risk Register, and Investor Memo.
 
+The prototype is wired to Alibaba Cloud Model Studio through its OpenAI-compatible chat completions endpoint. During local validation, a real Qwen request returned a structured court result with `engine: "qwen-cloud"`, confirming that the app is not only running in fallback mode.
+
 ## Use Of Alibaba Cloud
 
-The intended deployment path is Alibaba Cloud ECS or Simple Application Server running the Node/Express app with Qwen API environment variables. The deployment document explains the exact environment variables, startup command, and proof screenshots to include.
+The intended deployment path is Alibaba Cloud ECS or Simple Application Server running the Node/Express app with Qwen API environment variables. The deployment document explains the exact environment variables, startup command, workspace endpoint configuration, and proof screenshots to include.
 
 ## What Makes It Different
 

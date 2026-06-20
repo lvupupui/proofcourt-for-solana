@@ -7,8 +7,20 @@ This file is prepared for the Qwen Cloud AI Agent Hackathon submission. It docum
 ```bash
 QWEN_API_KEY=your_qwen_cloud_api_key
 QWEN_MODEL=qwen-plus
-QWEN_BASE_URL=https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+QWEN_BASE_URL=https://your-workspace-host.maas.aliyuncs.com/compatible-mode/v1
 PORT=3000
+```
+
+Use the OpenAI-compatible address shown in Alibaba Cloud Model Studio or Bailian for `QWEN_BASE_URL`. Do not use the DashScope `/api/v1` endpoint for this Node app.
+
+Example formats:
+
+```bash
+# Workspace endpoint from Alibaba Cloud Model Studio
+QWEN_BASE_URL=https://your-workspace-host.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+
+# Generic DashScope compatible endpoint, if enabled for your account
+QWEN_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
 ```
 
 ## Option A: Alibaba Cloud ECS
@@ -55,3 +67,5 @@ Capture screenshots of:
 ## Notes
 
 The app intentionally supports local fallback mode so the repository remains runnable without secrets. The deployed hackathon version should set `QWEN_API_KEY` so `/api/health` reports `qwenConfigured: true`.
+
+Local validation has confirmed that the app can call a Qwen workspace endpoint and return `engine: "qwen-cloud"` in the generated court result.

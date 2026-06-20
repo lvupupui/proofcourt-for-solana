@@ -22,6 +22,7 @@ Most AI agent demos turn an input into a summary. ProofCourt turns a startup pit
 - Alibaba Cloud deployment path documented for Devpost submission
 
 The app runs in local fallback mode when `QWEN_API_KEY` is not configured, so reviewers can inspect the product flow without secrets.
+It also supports Alibaba Cloud Model Studio workspace endpoints through `QWEN_BASE_URL`.
 
 ## Quick Start
 
@@ -42,8 +43,10 @@ To enable Qwen Cloud:
 ```bash
 QWEN_API_KEY=your_key_here
 QWEN_MODEL=qwen-plus
-QWEN_BASE_URL=https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+QWEN_BASE_URL=https://your-workspace-host.maas.aliyuncs.com/compatible-mode/v1
 ```
+
+For Alibaba Cloud Model Studio workspaces, use the OpenAI-compatible address shown in the console. A local smoke test has confirmed the app returns `engine: "qwen-cloud"` when a valid workspace API key is configured.
 
 ## API
 
