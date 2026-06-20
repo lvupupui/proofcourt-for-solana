@@ -80,6 +80,7 @@ Returns:
 
 - Architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - Submission draft: [docs/DEVPOST_DRAFT.md](docs/DEVPOST_DRAFT.md)
+- Submission package: [docs/DEVPOST_SUBMISSION_PACKAGE.md](docs/DEVPOST_SUBMISSION_PACKAGE.md)
 - Alibaba Cloud deployment notes: [deployment/ALIBABA_CLOUD.md](deployment/ALIBABA_CLOUD.md)
 
 ## Deployment

@@ -65,4 +65,5 @@ The main challenge was balancing a dramatic product experience with a practical 
 
 - GitHub: https://github.com/lvupupui/proofcourt-for-solana
 - Demo: https://proofcourt-for-solana.vercel.app
+- Submission package: https://github.com/lvupupui/proofcourt-for-solana/blob/main/docs/DEVPOST_SUBMISSION_PACKAGE.md
 - Video: to be added after recording
