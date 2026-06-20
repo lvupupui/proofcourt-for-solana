@@ -80,6 +80,19 @@ Returns:
 - Submission draft: [docs/DEVPOST_DRAFT.md](docs/DEVPOST_DRAFT.md)
 - Alibaba Cloud deployment notes: [deployment/ALIBABA_CLOUD.md](deployment/ALIBABA_CLOUD.md)
 
+## Deployment
+
+The repository includes a Vercel serverless entrypoint at `api/index.js`. Set these environment variables in the deployment platform:
+
+```bash
+QWEN_API_KEY=your_key_here
+QWEN_MODEL=qwen-plus
+QWEN_BASE_URL=https://your-workspace-host.maas.aliyuncs.com/compatible-mode/v1
+VERCEL=1
+```
+
+The static UI is served from `public/`, and the API routes continue to work at `/api/health` and `/api/court`.
+
 ## Safety
 
 ProofCourt is not financial, legal, tax, or formal security advice. It treats all submitted project material as untrusted evidence. It never asks for private keys, seed phrases, wallet signing, or token transactions.

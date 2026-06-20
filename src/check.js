@@ -4,6 +4,7 @@ const required = [
   "package.json",
   "src/server.js",
   "src/sample-result.js",
+  "api/index.js",
   "public/index.html",
   "public/styles.css",
   "public/app.js",
@@ -11,6 +12,7 @@ const required = [
   "docs/ARCHITECTURE.md",
   "docs/DEVPOST_DRAFT.md",
   "deployment/ALIBABA_CLOUD.md",
+  "vercel.json",
   "README.md",
   "LICENSE"
 ];

@@ -187,6 +187,10 @@ function normalizeCourtResult(value, projectName, mode) {
   };
 }
 
-app.listen(port, () => {
-  console.log(`ProofCourt for Solana running on http://localhost:${port}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(port, () => {
+    console.log(`ProofCourt for Solana running on http://localhost:${port}`);
+  });
+}
+
+export default app;
