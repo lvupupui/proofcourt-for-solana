@@ -1,5 +1,7 @@
 import express from "express";
 import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { z } from "zod";
 import { fallbackCourtResult } from "./sample-result.js";
 
@@ -7,9 +9,14 @@ loadLocalEnv();
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
+const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const publicDir = path.join(projectRoot, "public");
 
 app.use(express.json({ limit: "1mb" }));
-app.use(express.static("public"));
+app.use(express.static(publicDir));
+app.get("/", (_req, res) => {
+  res.sendFile(path.join(publicDir, "index.html"));
+});
 
 function loadLocalEnv() {
   const envPath = ".env";
