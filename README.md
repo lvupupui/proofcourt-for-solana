@@ -2,6 +2,8 @@
 
 ProofCourt for Solana is a Qwen Cloud powered multi-agent evidence court for evaluating Solana projects before founders, investors, grant reviewers, or ecosystem teams spend serious time on them.
 
+Live demo: https://proofcourt-for-solana.vercel.app
+
 Instead of generating another generic diligence report, ProofCourt stages a structured cross-examination:
 
 - Prosecutor Agent challenges unsupported claims.
